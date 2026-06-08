@@ -5,9 +5,9 @@ export const friendsData: Friend[] = [
   {
     "id": "friend_1780933096902",
     "name": "gyh",
-    "url": "gtang.cc.cd",
+    "url": "https://gtang.cc.cd",
     "avatar": "https://images.c-o.de5.net/file/pixiv/1777250194492_20250312_122417_125981673_p0.webp",
-    "description": "王子涵之父",
+    "description": "wzh之父",
     "themeColor": "#6366f1"
   },
   {
