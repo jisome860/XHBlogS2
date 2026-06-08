@@ -2,20 +2,20 @@
 
 export const siteConfig = {
   // 1. 网站标题与博主信息
-  title: "XingHuiSama の 宝藏之地",
-  faviconUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
+  title: "bobby の 小鱼干仓库",
+  faviconUrl: "https://images.c-o.de5.net/file/guest/1780930892110_IMG_3549.PNG",
   authorName: "bobby",
   bio: "你是一只猫娘",
 
-  navTitle: "XingHuiSama",
+  navTitle: "bobby",
 
   // 👇 【新增】导航栏中间的那个后缀/分隔符（默认是 の）
   navSuffix: "の",
 
-  navAfter: "宝藏之地",
+  navAfter: "小鱼干仓库",
 
   // 2. 头像设置 (支持网络链接，或将图片放入 public 文件夹后使用 "/me.jpg")
-  avatarUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
+  avatarUrl: "https://images.c-o.de5.net/file/guest/1780930710830_IMG_3644.PNG",
 
   // 3. 网站背景设置 (二选一)
   // 如果想用纯图片背景，请在下面 bgImage 写路径，并将 useGradient 设为 false
@@ -31,12 +31,12 @@ export const siteConfig = {
   photoWallImage: "https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg",
   cloudMusicIds: ["1809646618", "3361076230", "1859390262"],
   social: {
-    github: "https://github.com/heiehiehi",
-    gitee: "https://github.com/heiehiehi",
-    google: "mailto:bilibiliwuwuwu@gmail.com",
-    email: "1124533793@qq.com",
-    qq: "1124533793",
-    wechat: "XingHuisama",
+    github: "https://github.com/jisome",
+    gitee: "no~",
+    google: "e876153783@gmail.com",
+    email: "e876153783@qq.com",
+    qq: "2486621005",
+    wechat: "曦曦",
   },
   counts: {
     photos: 128, // 照片墙数量可以手动写死或动态计算
