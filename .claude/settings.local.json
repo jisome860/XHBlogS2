@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -A 10 '\"\"scripts\"\"' package.json)",
+      "Bash(python -c \"from cms_core.main import app; print\\(''Backend imports OK''\\)\")",
+      "Bash(netstat -ano)",
+      "Bash(curl:*)",
+      "Bash(find D:/my_project/my_blog -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.js -o -name *.jsx -o -name *.json -o -name .env* -o -name *.yaml -o -name *.yml -o -name *.toml -o -name *.py \\\\\\))",
+      "Bash(find D:/my_project/my_blog -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.js -o -name *.jsx \\\\\\) -not -path */.next/* -not -path */node_modules/* -not -path */dist/*)",
+      "Bash(find D:/my_project/my_blog -name siteConfig* -o -name site-config* -o -name site_config*)",
+      "Bash(find D:/my_project/my_blog -name siamese* -o -name cat* -o -name meow* -o -name 煤球*)",
+      "Bash(ls:*)",
+      "Bash(cd:*)",
+      "Bash(grep -rn \"vercel\\\\|deploy\\\\|sync\\\\|一键\" --include=*.json --include=*.ts --include=*.tsx .)"
+    ]
+  }
+}

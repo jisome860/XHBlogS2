@@ -1,0 +1,44 @@
+// 🛡️ 本文件由 XingHuiSama 控制台自动生成，请勿手动修改
+export interface Photo { url: string; caption?: string; }
+export interface Album { id: string; title: string; description: string; cover: string; date: string; photos: Photo[]; }
+
+export const albums: Album[] = [
+  {
+    "id": "terra-journey",
+    "title": "这是第二张图片",
+    "description": "第二张图片是这个",
+    "cover": "https://bu.dusays.com/2026/03/24/69c24230de927.jpg",
+    "date": "2026.01",
+    "photos": [
+      {
+        "url": "https://bu.dusays.com/2026/03/31/69cb69bb530d8.jpg",
+        "caption": "原来的人"
+      },
+      {
+        "url": "https://bu.dusays.com/2026/03/24/69c24230de927.jpg",
+        "caption": "星空漫游"
+      }
+    ]
+  },
+  {
+    "id": "history-tour",
+    "title": "这是第一张图片",
+    "description": "这真的是第一张图片吗",
+    "cover": "https://bu.dusays.com/2026/03/24/69c24230a4efe.jpg",
+    "date": "2025.10",
+    "photos": [
+      {
+        "url": "https://bu.dusays.com/2026/03/24/69c24230a5ff8.jpg",
+        "caption": "古都夕阳"
+      },
+      {
+        "url": "https://bu.dusays.com/2026/03/24/69c24230d661d.jpg",
+        "caption": "青石板小路"
+      },
+      {
+        "url": "https://bu.dusays.com/2026/03/24/69c24230de927.jpg",
+        "caption": "飞檐翘角"
+      }
+    ]
+  }
+];

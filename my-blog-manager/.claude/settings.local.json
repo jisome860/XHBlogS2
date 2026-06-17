@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find . -name *.bat -type f)",
+      "Bash(find /d/my_project/my_blog/my-blog-manager -name start.bat -o -name *.bat)",
+      "Bash(pip show:*)",
+      "Bash(python:*)",
+      "Bash(where python:*)",
+      "Bash(py -3.10 --version)",
+      "Bash(pip list:*)",
+      "Bash(pip install:*)",
+      "Bash(find D:my_projectmy_blogmy-blog-manager -type f -name *.py -path *deploy*)",
+      "Bash(find D:my_projectmy_blogmy-blog-manager -type f -name *.py -path *api*)",
+      "Bash(find D:my_projectmy_blogmy-blog-manager -name error.log -o -name launcher_error.log -o -name *.log)",
+      "Bash(taskkill /F /PID 15988)",
+      "Bash(taskkill /F /IM \"next-server \\(node.exe\\)\")",
+      "Bash(cmd /c \"python --version 2>&1 && where python 2>&1\")",
+      "Bash(cmd.exe /c \"python --version\")",
+      "Bash(taskkill /F /IM \"node.exe\")",
+      "Bash(xxd /d/my_project/my_blog/my-blog-manager/Start.bat)",
+      "Bash(xxd /d/my_project/my_blog/my-blog-manager/debug_start.bat)",
+      "Bash(cat /d/my_project/my_blog/my-blog-manager/.prettierrc* /d/my_project/my_blog/my-blog-manager/.lintstagedrc*)"
+    ]
+  }
+}
