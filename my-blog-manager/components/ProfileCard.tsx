@@ -36,7 +36,7 @@ export default function ProfileCard({ postCount, chatterCount, photoCount }: { p
         <div className="flex gap-6 w-full md:w-auto justify-around md:justify-start">
           <StatItem count={postCount} label="文章" color="text-indigo-600 dark:text-indigo-400" />
           <div className="w-px h-10 bg-slate-300/50 dark:bg-slate-700 hidden md:block"></div>
-          <StatItem count={chatterCount} label="杂谈" color="text-purple-600 dark:text-purple-400" />
+          <StatItem count={chatterCount} label="广告" color="text-purple-600 dark:text-purple-400" />
           <div className="w-px h-10 bg-slate-300/50 dark:bg-slate-700 hidden md:block"></div>
           <StatItem count={photoCount} label="照片" color="text-pink-600 dark:text-pink-400" />
         </div>

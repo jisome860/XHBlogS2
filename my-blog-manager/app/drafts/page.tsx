@@ -99,7 +99,7 @@ function DraftsContent() {
       <Navbar />
 
       {/* ---------------------------------------------------------
-          💎 自定义绝美确认弹窗 (与杂谈页保持高度统一)
+          💎 自定义绝美确认弹窗 (与广告页保持高度统一)
       --------------------------------------------------------- */}
       <AnimatePresence>
         {deleteModal.isOpen && (
@@ -179,7 +179,7 @@ function DraftsContent() {
               <Pencil size={16} /> 新建文章草稿
             </Link>
             <Link href="/editor?id=new&type=chatter" className="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl font-black text-sm shadow-lg shadow-pink-500/30 transition-all active:scale-95 flex items-center gap-2">
-              <Sparkles size={16} /> 新建杂谈草稿
+              <Sparkles size={16} /> 新建广告草稿
             </Link>
           </div>
 
@@ -203,7 +203,7 @@ function DraftsContent() {
                       <div className="flex justify-between items-start mb-4 relative z-10">
                         <div className="flex items-center gap-2">
                           <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest border ${draft.type === 'chatter' ? 'bg-pink-500/10 text-pink-600 border-pink-500/20' : 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20'}`}>
-                            {draft.type === 'chatter' ? '杂谈' : '文章'}
+                            {draft.type === 'chatter' ? '广告' : '文章'}
                           </span>
                           <span className="text-[10px] font-bold text-slate-400">
                             {formatDate(draft.lastModified)}

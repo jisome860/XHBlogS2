@@ -73,7 +73,7 @@ export default function CreativeWorkshopClient({ posts = [], chatters = [], mome
       console.log(`%c[渐近公式] EXP_Next = 150 + Math.floor((2000 * (L-1)) / ((L-1) + 10)) [极限上限: 2150]`, 'color: #8b5cf6; font-style: italic;');
       console.table({
         '文章发布 (50 EXP)': { '结算数量': posts.length, '贡献经验': postsExp },
-        '杂谈记录 (20 EXP)': { '结算数量': chatters.length, '贡献经验': chattersExp },
+        '广告记录 (20 EXP)': { '结算数量': chatters.length, '贡献经验': chattersExp },
         '每日说说 (10 EXP)': { '结算数量': moments.length, '贡献经验': momentsExp },
         '日历打卡 (100 EXP)': { '活跃天数': checkInDays, '贡献经验': checkInExp },
       });

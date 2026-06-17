@@ -24,7 +24,7 @@ import { siteConfig } from '../../siteConfig';
 import AboutClient from '../../components/AboutClient';
 
 // 🌟 读取指定目录下的 markdown 文件，并提取属性
-function getDirActivities(dirName: string, typeLabel: '文章' | '杂谈' | '说说', linkPrefix: string) {
+function getDirActivities(dirName: string, typeLabel: '文章' | '广告' | '说说', linkPrefix: string) {
   const dirPath = path.join(process.cwd(), dirName);
   if (!fs.existsSync(dirPath)) return [];
 
@@ -100,7 +100,7 @@ export default async function AdminAboutPage() {
 
   // 🌟 3. 获取所有的活动动态
   const posts = getDirActivities('posts', '文章', 'posts');
-  const chatters = getDirActivities('chatters', '杂谈', 'chatter');
+  const chatters = getDirActivities('chatters', '广告', 'chatter');
   const moments = getDirActivities('moments', '说说', 'moments');
 
   // 将所有动态合并，并按时间倒序排列 (最新的在最上面)

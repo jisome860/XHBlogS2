@@ -91,7 +91,7 @@ const MagicTooltip = ({ title, type, content, author, color }: any) => (
       ) : (
         <>
           <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2" style={{ color }}>
-            — {type === 'post' ? '📘 深度文章' : '📙 杂谈随笔'} —
+            — {type === 'post' ? '📘 深度文章' : '📙 广告随笔'} —
           </p>
           <p className="text-sm font-bold text-[#e8e4d9] text-center" style={{ fontFamily: 'serif' }}>{title}</p>
           <p className="text-[10px] text-[#8b6b4a] mt-2 font-mono tracking-widest">CLICK TO READ</p>
@@ -275,7 +275,7 @@ export default function AlchemyLab({ posts = [], chatters = [], moments = [] }: 
       if (level >= conf.num) ownedIds.add(id);
     });
 
-    // 2. 深度文章 & 杂谈随笔配置 (10~500篇满，10个阶段)
+    // 2. 深度文章 & 广告随笔配置 (10~500篇满，10个阶段)
     const postChatterConfig = [
       { num: 10, tier: 2, title: '初学乍练' }, { num: 50, tier: 3, title: '渐入佳境' },
       { num: 100, tier: 4, title: '百篇达成' }, { num: 150, tier: 5, title: '笔耕不辍' },
@@ -289,7 +289,7 @@ export default function AlchemyLab({ posts = [], chatters = [], moments = [] }: 
       if (posts.length >= conf.num) ownedIds.add(idPost);
 
       const idChatter = `chatter-${conf.num}`;
-      allCatalogBadges.push({ id: idChatter, title: conf.title, typeLabel: '杂谈随笔成就', condition: `累计发布 ${conf.num} 篇杂谈`, icon: ScrollText, colorTier: conf.tier, group: 'chatter' });
+      allCatalogBadges.push({ id: idChatter, title: conf.title, typeLabel: '广告随笔成就', condition: `累计发布 ${conf.num} 篇广告`, icon: ScrollText, colorTier: conf.tier, group: 'chatter' });
       if (chatters.length >= conf.num) ownedIds.add(idChatter);
     });
 
@@ -504,7 +504,7 @@ export default function AlchemyLab({ posts = [], chatters = [], moments = [] }: 
                 <h4 className="text-[#d4af37] text-[10px] font-black text-center mb-2 tracking-widest border-b border-[#8b6b4a]/30 pb-1">今日获取明细</h4>
                 <div className="space-y-1.5 text-xs font-mono">
                   {rpgStats.todayPosts > 0 && <div className="flex justify-between text-[#e8e4d9]"><span>深度文章 <span className="text-[10px] text-[#8b6b4a]">x{rpgStats.todayPosts}</span></span><span className="text-[#10b981]">+{rpgStats.todayPosts * 50}</span></div>}
-                  {rpgStats.todayChatters > 0 && <div className="flex justify-between text-[#e8e4d9]"><span>杂谈随笔 <span className="text-[10px] text-[#8b6b4a]">x{rpgStats.todayChatters}</span></span><span className="text-[#10b981]">+{rpgStats.todayChatters * 20}</span></div>}
+                  {rpgStats.todayChatters > 0 && <div className="flex justify-between text-[#e8e4d9]"><span>广告随笔 <span className="text-[10px] text-[#8b6b4a]">x{rpgStats.todayChatters}</span></span><span className="text-[#10b981]">+{rpgStats.todayChatters * 20}</span></div>}
                   {rpgStats.todayMoments > 0 && <div className="flex justify-between text-[#e8e4d9]"><span>瞬间思绪 <span className="text-[10px] text-[#8b6b4a]">x{rpgStats.todayMoments}</span></span><span className="text-[#10b981]">+{rpgStats.todayMoments * 10}</span></div>}
                   {rpgStats.isCheckedInToday && <div className="flex justify-between text-[#e8e4d9]"><span>首发冥想</span><span className="text-[#10b981]">+100</span></div>}
                   {rpgStats.todayExp === 0 && <div className="text-center text-slate-500 italic text-[10px] py-1">今日暂无研习记录</div>}
@@ -574,7 +574,7 @@ export default function AlchemyLab({ posts = [], chatters = [], moments = [] }: 
 
                     <div className="flex items-center gap-4 mt-16 mb-8">
                       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#8b6b4a]/50 to-transparent" />
-                      <span className="text-[#8b6b4a] text-xs font-black tracking-widest uppercase flex items-center gap-2"><ScrollText size={14} /> 杂谈随笔徽章 (满破 500篇)</span>
+                      <span className="text-[#8b6b4a] text-xs font-black tracking-widest uppercase flex items-center gap-2"><ScrollText size={14} /> 广告随笔徽章 (满破 500篇)</span>
                       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#8b6b4a]/50 to-transparent" />
                     </div>
                     <div className="flex flex-wrap gap-x-6 gap-y-10 justify-center">
@@ -638,7 +638,7 @@ export default function AlchemyLab({ posts = [], chatters = [], moments = [] }: 
               <div className="w-px h-8 bg-[#8b6b4a]/40" />
               <div className="flex flex-col items-center justify-center w-12">
                 <div className="flex items-center gap-1.5"><ScrollText size={14} className="text-[#f59e0b]"/><span className="text-xl font-bold text-[#e8e4d9] font-serif">{stats.chatter}</span></div>
-                <span className="text-[10px] text-[#8b6b4a] tracking-widest mt-1">杂谈随笔</span>
+                <span className="text-[10px] text-[#8b6b4a] tracking-widest mt-1">广告随笔</span>
               </div>
               <div className="w-px h-8 bg-[#8b6b4a]/40" />
               <div className="flex flex-col items-center justify-center w-12">

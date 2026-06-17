@@ -6,7 +6,7 @@ import PageTransition from '../../components/PageTransition';
 import ChatterBoard from './ChatterBoard';
 
 export const metadata = {
-  title: "杂谈 | XingHuiSama の 博客",
+  title: "广告 | XingHuiSama の 博客",
   description: "日常碎片与灵感记录",
 };
 
@@ -37,7 +37,7 @@ export default function ChatterPage() {
       };
     }).sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()));
   } catch (e) {
-    console.error("读取杂谈文件失败:", e);
+    console.error("读取广告文件失败:", e);
   }
 
   return (
