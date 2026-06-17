@@ -1,5 +1,4 @@
 "use client";
-import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../../siteConfig';
@@ -15,26 +14,6 @@ type Chatter = {
 };
 
 export default function ChatterBoard({ chatters }: { chatters: Chatter[] }) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeTag, setActiveTag] = useState("全部");
-
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    chatters.forEach(c => c.tags?.forEach(t => tags.add(t)));
-    return ["全部", ...Array.from(tags)];
-  }, [chatters]);
-
-  const filteredChatters = useMemo(() => {
-    if (searchQuery.length > 0 && searchQuery.trim() === "") return [];
-    const query = searchQuery.trim().toLowerCase();
-
-    return chatters.filter(chatter => {
-      const matchSearch = chatter.title.toLowerCase().includes(query) ||
-                          chatter.content.toLowerCase().includes(query);
-      const matchTag = activeTag === "全部" || chatter.tags?.includes(activeTag);
-      return matchSearch && matchTag;
-    });
-  }, [chatters, searchQuery, activeTag]);
 
   return (
     // 🌟 核心修改：缩紧整体容器的左右边距 px-3 md:px-10
@@ -50,40 +29,11 @@ export default function ChatterBoard({ chatters }: { chatters: Chatter[] }) {
         </p>
       </div>
 
-      <div className="mb-8 md:mb-12 flex flex-col items-center gap-5 md:gap-8">
-        <div className="relative w-full max-w-lg group px-2 md:px-0">
-          {/* 🌟 核心修改：搜索框在手机端更扁凑 */}
-          <input
-            type="text"
-            placeholder="搜寻被遗忘的思绪..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-white/40 dark:border-white/5 rounded-xl md:rounded-2xl px-4 md:px-6 py-3 md:py-4 pl-10 md:pl-14 text-sm md:text-base text-slate-800 dark:text-white shadow-lg md:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder-slate-400 font-medium"
-          />
-          <svg className="w-4 h-4 md:w-6 md:h-6 absolute left-5 md:left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-1.5 md:gap-2 px-2 md:px-0">
-          {allTags.map(tag => (
-            <button
-              key={tag}
-              onClick={() => setActiveTag(tag)}
-              className={`px-3 py-1.5 md:px-5 md:py-2 rounded-lg md:rounded-xl text-[10px] md:text-xs font-black transition-all duration-500 border ${
-                activeTag === tag 
-                ? 'bg-indigo-500 text-white border-indigo-500 shadow-md md:shadow-lg md:shadow-indigo-500/30 scale-105' 
-                : 'bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-400 border-white/20 dark:border-white/5 hover:bg-white/60 dark:hover:bg-slate-700/60'
-              }`}
-            >
-              {tag === "全部" ? tag : `# ${tag}`}
-            </button>
-          ))}
-        </div>
-      </div>
 
       {/* 🌟 核心修改 1：瀑布流直接设定为 columns-2，减小间距 gap-3 */}
       <motion.div layout className="columns-2 lg:columns-3 gap-3 md:gap-6 space-y-3 md:space-y-6">
         <AnimatePresence mode='popLayout'>
-          {filteredChatters.map((chatter) => (
+          {chatters.map((chatter) => (
             <motion.div
               layout
               initial={{ opacity: 0, scale: 0.9 }}

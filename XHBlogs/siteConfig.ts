@@ -41,8 +41,8 @@ export const siteConfig = {
   counts: {
     photos: 128, // 照片墙数量可以手动写死或动态计算
   },
-  chatterTitle: "云端杂谈", // 你可以改成任何你喜欢的名字
-  chatterDescription: "代码、学术、提瓦特与泰拉大陆的碎片记录",
+  chatterTitle: "我也要打广告吗", // 你可以改成任何你喜欢的名字
+  chatterDescription: "这才不是广告呢",
 
 
   // 👇 【新增】：全局背景弹幕配置

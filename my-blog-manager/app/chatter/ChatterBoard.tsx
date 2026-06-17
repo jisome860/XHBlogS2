@@ -1,9 +1,9 @@
 "use client";
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../../siteConfig';
-import { Plus, Pencil, Trash2, Search, Sparkles, AlertTriangle, X } from 'lucide-react';
+import { Plus, Pencil, Trash2, Sparkles, AlertTriangle, X } from 'lucide-react';
 import { useToast } from '../../components/ToastProvider';
 
 type Chatter = {
@@ -18,8 +18,6 @@ type Chatter = {
 
 export default function ChatterBoard({ chatters: initialChatters }: { chatters: Chatter[] }) {
   const [chatters, setChatters] = useState(initialChatters);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeTag, setActiveTag] = useState("全部");
   const { showToast } = useToast();
 
   // 👇 控制自定义弹窗的状态
@@ -29,21 +27,6 @@ export default function ChatterBoard({ chatters: initialChatters }: { chatters: 
     title: null
   });
 
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    chatters.forEach(c => c.tags?.forEach(t => tags.add(t)));
-    return ["全部", ...Array.from(tags)];
-  }, [chatters]);
-
-  const filteredChatters = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    return chatters.filter(chatter => {
-      const matchSearch = (chatter.title || "").toLowerCase().includes(query) ||
-                          (chatter.content || "").toLowerCase().includes(query);
-      const matchTag = activeTag === "全部" || chatter.tags?.includes(activeTag);
-      return matchSearch && matchTag;
-    });
-  }, [chatters, searchQuery, activeTag]);
 
   // 🗑️ 真正的执行删除逻辑
 // ... 保持其他部分不变 ...
@@ -148,30 +131,6 @@ export default function ChatterBoard({ chatters: initialChatters }: { chatters: 
         </p>
       </div>
 
-      <div className="mb-12 flex flex-col items-center gap-8">
-        <div className="relative w-full max-w-lg group">
-          <input
-            type="text" placeholder="搜寻被遗忘的思绪..." value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-white/40 dark:border-white/5 rounded-2xl px-6 py-4 pl-14 text-slate-800 dark:text-white shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder-slate-400 font-medium"
-          />
-          <Search className="w-6 h-6 absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-2">
-          {allTags.map(tag => (
-            <button key={tag} onClick={() => setActiveTag(tag)}
-              className={`px-5 py-2 rounded-xl text-xs font-black transition-all duration-500 border ${
-                activeTag === tag 
-                ? 'bg-indigo-500 text-white border-indigo-500 shadow-lg shadow-indigo-500/30 scale-105' 
-                : 'bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-400 border-white/20 dark:border-white/5 hover:bg-white/60 dark:hover:bg-slate-700/60'
-              }`}
-            >
-              {tag === "全部" ? tag : `# ${tag}`}
-            </button>
-          ))}
-        </div>
-      </div>
 
       <motion.div layout className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
 
@@ -188,7 +147,7 @@ export default function ChatterBoard({ chatters: initialChatters }: { chatters: 
         </motion.div>
 
         <AnimatePresence mode='popLayout'>
-          {filteredChatters.map((chatter) => (
+          {chatters.map((chatter) => (
             <motion.div
               layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
               key={chatter.slug} className="break-inside-avoid group relative"
