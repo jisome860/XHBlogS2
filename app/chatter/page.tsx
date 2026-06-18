@@ -8,7 +8,7 @@ import { siteConfig } from '@/siteConfig';
 
 
 export const metadata = {
-  title: "杂谈 | "+ siteConfig.title,
+  title: "广告 | "+ siteConfig.title,
   description: "日常碎片与灵感记录",
 };
 
@@ -41,7 +41,7 @@ export default function ChatterPage() {
       };
     }).sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime())); // 按时间倒序
   } catch (e) {
-    console.error("读取杂谈文件失败:", e);
+    console.error("读取广告文件失败:", e);
   }
 
   return (

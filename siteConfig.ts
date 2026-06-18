@@ -31,18 +31,18 @@ export const siteConfig = {
   photoWallImage: "https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg",
   cloudMusicIds: ["1809646618", "3361076230", "1859390262"],
   social: {
-    github: "https://github.com/jisome",
+    github: "https://github.com/jisome860",
     gitee: "no~",
     google: "e876153783@gmail.com",
     email: "e876153783@qq.com",
     qq: "2486621005",
-    wechat: "曦曦",
+    wechat: "wxid_jsfgao6pqqbp22",
   },
   counts: {
     photos: 128, // 照片墙数量可以手动写死或动态计算
   },
-  chatterTitle: "云端杂谈", // 你可以改成任何你喜欢的名字
-  chatterDescription: "代码、学术、提瓦特与泰拉大陆的碎片记录",
+  chatterTitle: "我也要打广告吗", // 你可以改成任何你喜欢的名字
+  chatterDescription: "这才不是广告呢",
 
 
   // 👇 【新增】：全局背景弹幕配置
@@ -67,5 +67,5 @@ export const siteConfig = {
     temperature: 0.85,
   },
   friendLinkApplyFormat: "名称：bobbyの小鱼干仓库\n简介：今天我也要学习吗\n链接：https://myblog.xiesharkshark.com\n头像：https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
-  enableLevelSystem: true,
+  enableLevelSystem: false,
 };
