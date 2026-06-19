@@ -6,7 +6,7 @@ export const friendsData: Friend[] = [
     "id": "friend_1781861328652",
     "name": "rwy",
     "url": "https://blog.wayne.kdns.fr/",
-    "avatar": "https://images.c-o.de5.net/file/1781861269278_5E5457298C91E586F87550E5D1AC7950.png",
+    "avatar": "https://images.c-o.de5.net/file/guest/1781861269278_5E5457298C91E586F87550E5D1AC7950.png",
     "description": "wzhzf",
     "themeColor": "#6366f1"
   },
@@ -14,7 +14,7 @@ export const friendsData: Friend[] = [
     "id": "friend_1781861022093",
     "name": "wzh",
     "url": "https://personal-website-2je.pages.dev/",
-    "avatar": "https://images.c-o.de5.net/file/1781861552860_d49b75dcfc69ed3e84d1da5b3ba5044f.jpg",
+    "avatar": "https://images.c-o.de5.net/file/guest/1781861552860_d49b75dcfc69ed3e84d1da5b3ba5044f.jpg",
     "description": "gyhzz",
     "themeColor": "#6366f1"
   },
