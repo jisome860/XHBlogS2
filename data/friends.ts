@@ -14,7 +14,7 @@ export const friendsData: Friend[] = [
     "id": "friend_1781861022093",
     "name": "wzh",
     "url": "https://personal-website-2je.pages.dev/",
-    "avatar": "https://ts1.tc.mm.bing.net/th/id/R-C.47d7920ccecfe7343db20211ed9c52e5?rik=M8NSDQV1%2f1NPDA&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20200411%2fdbd20b118869495e8b24c2f6c69b91f2.jpeg&ehk=Wq75UFsV81VnGADMV%2f0XOh3DwkRajCxaMg5%2bzACDhX0%3d&risl=&pid=ImgRaw&r=0",
+    "avatar": "https://images.c-o.de5.net/file/1781861552860_d49b75dcfc69ed3e84d1da5b3ba5044f.jpg",
     "description": "gyhzz",
     "themeColor": "#6366f1"
   },
